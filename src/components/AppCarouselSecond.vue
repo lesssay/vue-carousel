@@ -18,6 +18,9 @@ export default {
   data() {
     return {
       slides: [],
+      slidesCount: 10,
+      // picPlaceholder:
+      //   "https://www.baywoodglass.ca/wp-content/uploads/2017/05/placeholder-300x200.png",
       currentIndex: 0,
       startX: 0,
       isDragging: false,
@@ -50,25 +53,33 @@ export default {
         event.preventDefault();
       }
     },
-    getRandomNum() {
-      return Math.floor(Math.random() * 500);
-    },
 
     getRandomSlides() {
-      for (let i = 1; i <= 10; i++) {
-        const slidePlaceholder =
-          "https://www.baywoodglass.ca/wp-content/uploads/2017/05/placeholder-300x200.png";
+      function getRandomNum() {
+        return Math.floor(Math.random() * 1000) + 1;
+      }
 
-        let slideUrl = `https://picsum.photos/id/${this.getRandomNum()}/300/200`;
+      const usedNums = []; // array vuoto per memorizzare i numeri già generati
 
-        // CHECK URL
+      // for (let i = 1; i <= slidesCount; i++) {
+      while (this.slides.length < this.slidesCount) {
+        let slideNum;
+        do {
+          slideNum = getRandomNum();
+        } while (usedNums.includes(slideNum)); // genera un nuovo numero finché non viene generato un numero che non è già stato usato
+
+        usedNums.push(slideNum); // aggiungi il numero casuale all'array dei numeri già generati
+
+        const slideUrl = `https://picsum.photos/id/${slideNum}/300/200`;
+
+        // controllo l'url
         const http = new XMLHttpRequest();
         http.open("GET", slideUrl, false);
         http.send();
-        // FILL ARRAY
 
+        // riempio l'array
         if (http.status != 404) this.slides.push(slideUrl);
-        else this.slides.push(slidePlaceholder);
+        // else this.slides.push(slidePlaceholder);
       }
     },
   },

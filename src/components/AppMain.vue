@@ -1,12 +1,12 @@
 <template>
   <main>
     <section class="first-carousel">
-      <h1>FIRST CAROUSEL</h1>
+      <h1>First Carousel</h1>
       <AppCarouselFirst />
     </section>
 
     <section>
-      <h1>SECOND CAROUSEL</h1>
+      <h1>Second Carousel</h1>
       <AppCarouselSecond />
     </section>
   </main>
@@ -41,7 +41,8 @@ main {
     text-align: center;
     margin-bottom: 20px;
     color: $secondary-color;
-    text-shadow: 0 5px 8px $primary-color;
+    text-shadow: 0 3px 7px $primary-color;
+    font-size: 1.8rem;
   }
 }
 </style>
