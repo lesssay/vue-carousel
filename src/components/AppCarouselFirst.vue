@@ -1,5 +1,5 @@
 <template>
-  <carousel :items-to-show="4" :wrap-around="false">
+  <carousel :items-to-show="4" :items-to-scroll="4" :wrap-around="false">
     <slide v-for="(slide, i) in pictures" :key="slide">
       <img :src="slide" :alt="i" />
     </slide>
@@ -62,10 +62,13 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-.carousel__slide {
-  // margin: 10px;
-  // border: solid 10px white;
+.carousel__viewport {
+  padding: 20px;
 }
+// .carousel__slide {
+//    margin: 10px;
+//    border: solid 10px white;
+// }
 
 img {
   width: 90%;
@@ -73,8 +76,9 @@ img {
   margin: 0 10px;
 }
 
-.carousel__slide:hover {
-  box-shadow: 0 5px 8px darkslategrey;
-  // transform: scale(1.1);
+img:hover {
+  // box-shadow: 0 5px 8px darkslategrey;
+  transform: translateY(10px);
+  box-shadow: 0 -5px 8px darkslategrey;
 }
 </style>

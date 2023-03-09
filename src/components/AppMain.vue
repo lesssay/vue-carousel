@@ -24,8 +24,8 @@ export default {
 h1 {
   text-align: center;
   margin-bottom: 20px;
-  color: rgb(26, 26, 26);
-  text-shadow: 0 5px 5px darkslategrey;
+  color: rgb(87, 51, 87);
+  text-shadow: 0 5px 8px darkslategrey;
 }
 main {
   padding: 100px 50px;
