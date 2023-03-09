@@ -1,9 +1,14 @@
 <template>
   <main>
-    <h1>FIRST CAROUSEL</h1>
-    <AppCarouselFirst class="first-carousel" />
-    <h1>SECOND CAROUSEL</h1>
-    <AppCarouselSecond />
+    <section class="first-carousel">
+      <h1>FIRST CAROUSEL</h1>
+      <AppCarouselFirst />
+    </section>
+
+    <section>
+      <h1>SECOND CAROUSEL</h1>
+      <AppCarouselSecond />
+    </section>
   </main>
 </template>
 
@@ -20,21 +25,23 @@ export default {
 };
 </script>
 
-<style>
-h1 {
-  text-align: center;
-  margin-bottom: 20px;
-  color: rgb(87, 51, 87);
-  text-shadow: 0 5px 8px darkslategrey;
-}
+<style lang="scss" scoped>
+@import "../assets/sass/variables";
+
 main {
   padding: 100px 50px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
+  .first-carousel {
+    margin-bottom: 100px;
+  }
 
-.first-carousel {
-  margin-bottom: 100px;
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: $secondary-color;
+    text-shadow: 0 5px 8px $primary-color;
+  }
 }
 </style>

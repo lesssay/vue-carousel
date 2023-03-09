@@ -62,23 +62,23 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+@import "../assets/sass/variables";
 .carousel__viewport {
   padding: 20px;
-}
-// .carousel__slide {
-//    margin: 10px;
-//    border: solid 10px white;
-// }
+  // .carousel__slide {
+  //    margin: 10px;
+  //    border: solid 10px white;
+  // }
 
-img {
-  width: 90%;
-  height: 90%;
-  margin: 0 10px;
-}
-
-img:hover {
-  // box-shadow: 0 5px 8px darkslategrey;
-  transform: translateY(10px);
-  box-shadow: 0 -5px 8px darkslategrey;
+  img {
+    width: 90%;
+    height: 90%;
+    margin: 0 10px;
+    &:hover {
+      // box-shadow: 0 5px 8px darkslategrey;
+      transform: translateY(10px);
+      box-shadow: 0 -5px 8px $primary-color;
+    }
+  }
 }
 </style>

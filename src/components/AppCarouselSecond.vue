@@ -79,37 +79,33 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+@import "../assets/sass/variables";
+
 .carousel {
   width: 100%;
   overflow: hidden;
   position: relative;
-}
+  .slides {
+    display: flex;
+    width: 100%;
+    padding: 20px 0;
+    transition: transform 0.5s ease-out;
+    .slide {
+      flex: 0 0 100%;
+      flex-basis: calc(100% / 4 - 20px);
+      margin: 0 10px;
+      border: solid 10px white;
+      box-shadow: 0 5px 8px $primary-color;
+      text-align: center;
+      &:hover {
+        transform: scale(1.1);
 
-.carousel__viewport {
-  padding: 10px 0;
-}
-
-.slides {
-  display: flex;
-  width: 100%;
-  padding: 20px 0;
-  transition: transform 0.5s ease-out;
-}
-.slide {
-  flex: 0 0 100%;
-  flex-basis: calc(100% / 4 - 20px);
-  margin: 0 10px;
-  border: solid 10px white;
-  box-shadow: 0 5px 8px darkslategrey;
-  text-align: center;
-}
-
-.slide:hover {
-  transform: scale(1.1);
-}
-
-img {
-  max-width: 100%;
+        img {
+          max-width: 100%;
+        }
+      }
+    }
+  }
 }
 </style>
